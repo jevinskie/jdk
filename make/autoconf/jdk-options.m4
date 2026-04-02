@@ -359,8 +359,8 @@ AC_DEFUN_ONCE([JDKOPT_SETUP_CODE_COVERAGE],
         fi
       ],
       IF_ENABLED: [
-        GCOV_CFLAGS="-fprofile-arcs -ftest-coverage -fno-inline"
-        GCOV_LDFLAGS="-fprofile-arcs"
+        GCOV_CFLAGS="-fprofile-instr-generate -fcoverage-mapping"
+        GCOV_LDFLAGS="-fprofile-instr-generate -fcoverage-mapping"
         JVM_CFLAGS="$JVM_CFLAGS $GCOV_CFLAGS"
         JVM_LDFLAGS="$JVM_LDFLAGS $GCOV_LDFLAGS"
         CFLAGS_JDKLIB="$CFLAGS_JDKLIB $GCOV_CFLAGS"
